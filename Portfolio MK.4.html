@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio MK4</title>
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+    }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+    }
+
+        .topnav a.active {
+            background-color: black;
+            color: white;
+    }
+        .parent-div{
+            position:relative;
+        }
+
+        .popup-div{
+            position:absolute;top:0px;left:0px;
+            z-index:10;
+            display:none;
+    }
+        p.border{
+            border-style:solid;
+            border-color: gray;
+
+        }
+        .flex-container {
+        display: flex;
+        background-color: black;
+        height: auto;
+    }
+
+        .flex-container > div {
+        background-color: white;
+        width: 800px;
+        margin: 20px;
+        padding: 20px;
+        font-size: 30px;
+        border-color: black;
+    }
+        .flex2 > div {
+            background-color: white;
+            margin-left: 200px;
+            width:200px;
+            margin: auto;
+            padding: 20px;
+            font-size: 30px;
+            border-color: gray;
+        }
+        img{
+            display:block;
+            margin-left: 20px;
+            margin-right: 0px;
+            margin-top: 30px;
+            
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "1") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<body style="background-color: black;">
+    <div class="topnav">
+        <a class="active"href="#Home">Home</a>
+    <div class="topnav">    
+        <a href="#Education">Education</a>
+    <div class="topnav">  
+        <a href="#Hobbies">Hobbies</a>
+    <div class="topnav">  
+        <a href="#Coding_skills">Coding skills</a>
+    <div class="topnav">
+        <a href="#Forum">Forum</a>
+    </div>
+    <div class="flex2">
+        <div><center><b>Student profile</b></center></div> 
+    </div>
+    <br>
+    <div class="flex-container" id="Home">
+        <img src="Instagram profile pic.jpg" height="300" width="330">
+        <div><p>Name:Kelvin</p>
+        <p>Class:L1CC</p>
+        <p>Student ID:2702355284</p>
+        <p><input type="radio" id="Man" name="Gender" value="Man" checked="checked">
+            <label for="Man">Man</label>
+        <input type="radio" id="Woman" name="Gender" value="Woman">
+            <label for="Woman">Woman</label></p>
+        </div>
+    </div>
+    </div>
+    <div class="flex-container" id="Education">
+    <div><p><center>Education</center></p>
+        <ol>
+            <li>Kindergarten:<a href= "https://kinderfieldhighfield.sch.id/" > Kinderfield</a></li>
+            <li>Primary school:<a href= "http://www.sbgg.sch.id/#popup" > Sekolah bina gita gemilang</a></li>
+            <li>High school:<a href= "https://www.sampoernaacademy.sch.id/en/"> Sampoerna academy</a></li>
+            <li>University:<a href= "https://binus.ac.id/"> Binus University senayan</a></li>
+         </ol>
+    </div>
+    <div class="flex2" id="Hobbies">
+    <div><p><center>Hobbies</center></p>
+        <ul>
+            <li>Swimming</li>
+            <li>Napping</li>
+            <li>Playing games</li>
+            <li>Going out with friends</li>
+            <li>Making things out of recyclable materials</li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <br>
+    <div class="flex2" id="Coding_skills">
+        <div><p><center>Coding skills</p>   
+            <input type="checkbox" id="Skill1" name="Skill1" value="" checked>
+            <label for="Skill1">Phython</label><br>
+            <input type="checkbox" id="Skill2" name="Skill2" value="" checked>
+            <label for="Skill2">HTML</label><br>
+            <input type="checkbox" id="Skill3" name="Skill3" value="" checked>
+            <label for="Skill3">C++</label><br></center>
+        </div>
+    </div>
+    <center>Dynamic form</center>
+<body>
+    <p style="color: white;">
+    <div style="background-color: white;" id="Forum">
+        <form>
+        <label for="fname">First name:*</label><br>
+        <input type="text" id="fname" name="fname" maxlength="20" required><br>
+        <label for="lname">Last name:*</label><br>
+        <input type="text" id="lname" name=lname maxlength="20" required><br>
+        <label for="Password">You like site?*</label><br>
+        <input type="radio" id="html" name="opinion" value="Yes">
+        <label for="html">Yes</label><br>
+        <input type="radio" id="No" name="opinion" value="No">
+        <label for="css">No</label><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </form>
+    </div>
+</p>
+</body>
+</html>
